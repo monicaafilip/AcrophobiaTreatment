@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class elevator : MonoBehaviour
 {
-    public Vector3 floorDist = Vector3.up;
+    public Vector3 floorDist;
     public float speed = 1.0f;
     public int floor = 0;
     public int maxFloor = 1;
     public Rigidbody movePlatform;
-
     private float tTotal;
     private bool isMoving;
     private float moveDirection;
 
-
+    private void Start()
+    {
+        floorDist = new Vector3(0, 2.1f, 0);
+        Debug.Log(floorDist);
+    }
     private void Update()
     {
         if (Input.GetKey(KeyCode.U))
@@ -28,13 +31,13 @@ public class elevator : MonoBehaviour
     }
     void MoveElevator()
     {
-        var v = moveDirection * floorDist.normalized * speed;
+        var v = moveDirection * floorDist * speed;
         var t = Time.deltaTime;
         var tMax = floorDist.magnitude / speed;
         t = Mathf.Min(t, tMax - tTotal);
         movePlatform.MovePosition(v * t + movePlatform.gameObject.transform.position);
         tTotal += t;
-
+        //Debug.Log(floor.ToString() + ":" + (v * t + movePlatform.gameObject.transform.position).ToString());
         if(tTotal >= tMax)
         {
             //we are at floor
@@ -71,15 +74,5 @@ public class elevator : MonoBehaviour
         else
             StartMoveDown();
     }
-    //public GameObject movePlatform;
-    //public Rigidbody playerRb;
-    //
-    //private void OnTriggerStay(Collision other)
-    //{
-    //    if (other.gameObject.tag == "Player")
-    //    {
-    //        movePlatform.transform.position += movePlatform.transform.up * Time.deltaTime;
-    //        playerRb.MovePosition(transform.position + playerRb.transform.up * Time.deltaTime);
-    //    }
-    //}
+  
 }
