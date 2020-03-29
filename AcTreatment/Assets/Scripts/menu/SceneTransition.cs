@@ -16,10 +16,10 @@ public class SceneTransition : MonoBehaviour
 
     public void LoadScene()
     {
-        StartCoroutine(loadSceneCoroutine());
+        StartCoroutine(LoadSceneCoroutine());
     }
 
-    IEnumerator loadSceneCoroutine()
+    IEnumerator LoadSceneCoroutine()
     {
         transitionAnimator.enabled = true;
         transitionAnimator.SetTrigger("end");
