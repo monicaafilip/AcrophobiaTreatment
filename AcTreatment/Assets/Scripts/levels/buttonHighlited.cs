@@ -6,33 +6,26 @@ using UnityEngine.Video;
 
 public class buttonHighlited : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public GameObject videoPlayer;
+    public GameObject animator;
     public RawImage rawImage;
-    public Texture imageTexture;
+
+    private float pauseTime;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        VideoPlayer videoPlayerObj = videoPlayer.GetComponent<VideoPlayer>();
-     
-        videoPlayerObj.Prepare();
-        while (!videoPlayerObj.isPrepared)
-        {
-            StartCoroutine(PrepareVideo());
-            break;
-        }
-        rawImage.texture = videoPlayerObj.texture;
-        videoPlayerObj.Play();
-
+        animator.SetActive(true);
+        rawImage.gameObject.SetActive(false);
+        AnimatorStateInfo stateInfo = animator.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
+        animator.GetComponent<Animator>().Play(stateInfo.nameHash, 0, pauseTime);
+  
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        videoPlayer.GetComponent<VideoPlayer>().Pause();
-        rawImage.texture = imageTexture;
+        pauseTime = animator.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime;
+    
+        rawImage.gameObject.SetActive(true);
+        animator.SetActive(false);
     }
 
-    IEnumerator PrepareVideo()
-    {
-        yield return new WaitForSeconds(1); 
-    }
 }
