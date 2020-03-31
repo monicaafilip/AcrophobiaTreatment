@@ -1,8 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class buttonHighlited : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -12,12 +12,27 @@ public class buttonHighlited : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        videoPlayer.SetActive(true);
+        VideoPlayer videoPlayerObj = videoPlayer.GetComponent<VideoPlayer>();
+     
+        videoPlayerObj.Prepare();
+        while (!videoPlayerObj.isPrepared)
+        {
+            StartCoroutine(PrepareVideo());
+            break;
+        }
+        rawImage.texture = videoPlayerObj.texture;
+        videoPlayerObj.Play();
+
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        videoPlayer.SetActive(false);
+        videoPlayer.GetComponent<VideoPlayer>().Pause();
         rawImage.texture = imageTexture;
+    }
+
+    IEnumerator PrepareVideo()
+    {
+        yield return new WaitForSeconds(1); 
     }
 }
