@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1.032754, g: 0.43527132, b: 0.2978756, a: 1}
+  m_IndirectSpecularColor: {r: 1.0327597, g: 0.43528086, b: 0.297888, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -443,13 +443,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225779632}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -1.276, y: 0.795, z: 7.717}
+  m_LocalScale: {x: 0.010093395, y: 0.010674116, z: 1}
   m_Children: []
   m_Father: {fileID: 1213879805}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &225779634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,7 +502,7 @@ MonoBehaviour:
   noDepthBufferTesting: 0
   currentOverlayShape: 0
   textures:
-  - {fileID: 2800000, guid: 077028084dceb584798dade6c58d1978, type: 3}
+  - {fileID: 0}
   - {fileID: 0}
 --- !u!64 &225779635
 MeshCollider:
@@ -525,7 +525,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225779632}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1239,6 +1239,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: interior_living_room
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: aed0b135c43eadf4fb53dc2c29394961,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1276603737757889232, guid: aed0b135c43eadf4fb53dc2c29394961,
         type: 3}
