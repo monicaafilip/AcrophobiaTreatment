@@ -21,6 +21,7 @@ public class SceneTransition : MonoBehaviour
 
     IEnumerator LoadSceneCoroutine()
     {
+        Debug.Log("loadSceneCoroutine");
         transitionAnimator.enabled = true;
         transitionAnimator.SetTrigger("end");
         yield return new WaitForSeconds(0.5f);
