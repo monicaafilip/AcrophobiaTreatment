@@ -48,7 +48,7 @@ public class clickButtons : MonoBehaviour
         transitionAnimator.enabled = true;
         transitionAnimator.SetTrigger("end");
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("city");
     }
 
 }
