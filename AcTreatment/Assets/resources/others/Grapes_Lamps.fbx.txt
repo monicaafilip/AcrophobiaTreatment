@@ -1,0 +1,8 @@
+Unable to load material library
+Unable to read material "Gold_Old" in .mtl file
+Unable to read material "Gold" in .mtl file
+Unable to read material "Shade" in .mtl file
+Unable to read material "Plug" in .mtl file
+Unable to read material "Cable" in .mtl file
+Unable to read material "Glass" in .mtl file
+Unable to read material "Welding" in .mtl file

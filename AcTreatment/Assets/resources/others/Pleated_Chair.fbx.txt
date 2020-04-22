@@ -1,0 +1,3 @@
+Unable to load material library
+Unable to read material "fabricChair" in .mtl file
+Unable to read material "legs" in .mtl file

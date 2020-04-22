@@ -1,0 +1,10 @@
+Unable to load material library
+Unable to read material "wire_087224198" in .mtl file
+Unable to read material "wire_225198087" in .mtl file
+Unable to read material "wire_225198087" in .mtl file
+Unable to read material "wire_225198087" in .mtl file
+Unable to read material "wire_225198087" in .mtl file
+Unable to read material "wire_229166215" in .mtl file
+Unable to read material "wire_225198087" in .mtl file
+Unable to read material "wire_134110008" in .mtl file
+Unable to read material "wire_088199225" in .mtl file
