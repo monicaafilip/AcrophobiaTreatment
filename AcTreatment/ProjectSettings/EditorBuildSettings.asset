@@ -1,18 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!1045 &1
-EditorBuildSettings:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: ff6de848a67f0be4ba9cd3ee767f1795
-  - enabled: 1
-    path: Assets/Scenes/city.unity
-    guid: cbfe36cfddfde964d9dfce63a355d5dd
-  m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 570a4bf53f8f0b84b8605b52671bf86a,
-      type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 862b76c52fa37c444947317c5777d11a,
-      type: 2}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f92edb28b86287423a6dc72f46d56222850b100c723830384d6cbfe449aae678
+size 563
