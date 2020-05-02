@@ -200,7 +200,6 @@ public class OVRPlayerController : MonoBehaviour
 
 	void Update()
 	{
-		Debug.Log("Fps: "+ (1.0f / Time.deltaTime).ToString());
 		if (!playerControllerEnabled)
 		{
 			if (OVRManager.OVRManagerinitialized)
