@@ -8,12 +8,6 @@ public class SceneTransition : MonoBehaviour
     public Animator transitionAnimator;
     public string sceneName;
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Space))
-    //        StartCoroutine(LoadScene());
-    //}
-
     public void LoadScene()
     {
         StartCoroutine(LoadSceneCoroutine());
@@ -27,4 +21,5 @@ public class SceneTransition : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(sceneName);
     }
+
 }
