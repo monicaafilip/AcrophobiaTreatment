@@ -33,46 +33,78 @@ public class PanelManagement : MonoBehaviour
             case "Definire":
                 panelDefinire.SetActive(false);
                 panelStudii.SetActive(true);
+                currentPanel = "Studii";
+                nextButton.SetActive(false);
+                nextButton.SetActive(true);
                 break;
             case "Studii":
                 panelStudii.SetActive(false);
                 panelIntrebari.SetActive(true);
+                currentPanel = "Intrebare_1";
+                nextButton.SetActive(false);
+                nextButton.SetActive(true);
                 break;
             case "Intrebare_1":
                 intrebare1.SetActive(false);
                 intrebare2.SetActive(true);
+                currentPanel = "Intrebare_2";
+                nextButton.SetActive(false);
+                nextButton.SetActive(true);
                 break;
             case "Intrebare_2":
                 intrebare2.SetActive(false);
                 intrebare3.SetActive(true);
+                currentPanel = "Intrebare_3";
+                nextButton.SetActive(false);
+                nextButton.SetActive(true);
                 break;
             case "Intrebare_3":
                 intrebare3.SetActive(false);
                 intrebare4.SetActive(true);
+                currentPanel = "Intrebare_4";
+                nextButton.SetActive(false);
+                nextButton.SetActive(true);
                 break;
             case "Intrebare_4":
                 intrebare4.SetActive(false);
                 intrebare5.SetActive(true);
+                nextButton.SetActive(false);
+                nextButton.SetActive(true);
                 break;
             case "Intrebare_5":
                 intrebare5.SetActive(false);
                 intr_concluzie.SetActive(true);
+                currentPanel = "Intrebare_concluzie";
+                nextButton.SetActive(false);
+                nextButton.SetActive(true);
                 break;
             case "Intrebare_concluzie":
                 panelIntrebari.SetActive(false);
                 panelImaginatie.SetActive(true);
+                currentPanel = "Ex1";
+                nextButton.SetActive(false);
+                nextButton.SetActive(true);
                 break;
             case "Ex1":
                 ex2.SetActive(false);
                 ex2.SetActive(true);
+                currentPanel = "Ex2";
+                nextButton.SetActive(false);
+                nextButton.SetActive(true);
                 break;
             case "Ex2":
                 ex2.SetActive(false);
                 ex3.SetActive(true);
+                currentPanel = "Ex3";
+                nextButton.SetActive(false);
+                nextButton.SetActive(true);
                 break;
             case "Ex3":
                 ex3.SetActive(false);
                 ex_concluzie.SetActive(true);
+                currentPanel = "Ex_concluzie";
+                nextButton.SetActive(false);
+                nextButton.SetActive(true);
                 break;
 
 
@@ -103,8 +135,8 @@ public class PanelManagement : MonoBehaviour
     IEnumerator LoadSceneCoroutine()
     {
         Debug.Log("loadSceneCoroutine");
-        yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene(nextScene);
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadSceneAsync(nextScene);
     }
 
 
