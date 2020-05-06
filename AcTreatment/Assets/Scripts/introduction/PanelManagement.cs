@@ -10,6 +10,7 @@ public class PanelManagement : MonoBehaviour
     public GameObject panelDefinire;
     public GameObject panelStudii;
     public GameObject panelIntrebari;
+    public GameObject studii_leftCanvas;
 
     public GameObject intrebare1;
     public GameObject intrebare2;
@@ -33,12 +34,14 @@ public class PanelManagement : MonoBehaviour
             case "Definire":
                 panelDefinire.SetActive(false);
                 panelStudii.SetActive(true);
+                studii_leftCanvas.SetActive(true);
                 currentPanel = "Studii";
                 nextButton.SetActive(false);
                 nextButton.SetActive(true);
                 break;
             case "Studii":
                 panelStudii.SetActive(false);
+                studii_leftCanvas.SetActive(false);
                 panelIntrebari.SetActive(true);
                 currentPanel = "Intrebare_1";
                 nextButton.SetActive(false);
