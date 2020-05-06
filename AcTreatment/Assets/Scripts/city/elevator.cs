@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class elevator : MonoBehaviour
 {
@@ -13,6 +11,15 @@ public class elevator : MonoBehaviour
     private bool isMoving;
     private float moveDirection;
 
+    InputController inputCtrl;
+
+    private void Awake()
+    {
+        Debug.Log("elevator awake() -> input controlls set up");
+        inputCtrl = new InputController();
+        inputCtrl.gameplay.Up.performed += x => StartMoveUp();
+        inputCtrl.gameplay.Down.performed += x => StartMoveDown();
+    }
     private void Start()
     {
         floorDist = new Vector3(0, 2.1f, 0);
@@ -74,5 +81,13 @@ public class elevator : MonoBehaviour
         else
             StartMoveDown();
     }
-  
+
+    private void OnEnable()
+    {
+        inputCtrl.Enable();
+    }
+    private void OnDisable()
+    {
+        inputCtrl.Disable();
+    }
 }
