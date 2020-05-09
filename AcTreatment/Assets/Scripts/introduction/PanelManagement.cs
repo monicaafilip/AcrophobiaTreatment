@@ -71,6 +71,7 @@ public class PanelManagement : MonoBehaviour
             case "Intrebare_4":
                 intrebare4.SetActive(false);
                 intrebare5.SetActive(true);
+                currentPanel = "Intrebare_5";
                 nextButton.SetActive(false);
                 nextButton.SetActive(true);
                 break;
@@ -108,6 +109,9 @@ public class PanelManagement : MonoBehaviour
                 currentPanel = "Ex_concluzie";
                 nextButton.SetActive(false);
                 nextButton.SetActive(true);
+                break;
+            case "Ex_concluzie":
+                LoadScene();
                 break;
 
 

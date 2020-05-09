@@ -2,13 +2,12 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 public class clickButtons : MonoBehaviour
-{
-    public GameObject welcomeMenuColliders;
+{   
     public GameObject welcomeTextUI;
     public GameObject startButtonUI;
     public GameObject exitButtonUI;
-    public GameObject chooseLevelMenuColliders;
-    public GameObject level1Button;
+    public GameObject cityButton;
+    public GameObject buildingButton;
 
     public Animator  transitionAnimator;
 
@@ -22,10 +21,9 @@ public class clickButtons : MonoBehaviour
         transitionAnimator.SetTrigger("end");
         yield return new WaitForSeconds(0.5f);
 
-        chooseLevelMenuColliders.SetActive(true);
-        level1Button.SetActive(true);
+        cityButton.SetActive(true);
+        buildingButton.SetActive(true);
 
-        welcomeMenuColliders.SetActive(false);
         welcomeTextUI.SetActive(false);
         startButtonUI.SetActive(false);
         exitButtonUI.SetActive(false);
@@ -36,19 +34,23 @@ public class clickButtons : MonoBehaviour
         Application.Quit();
     }
     
-    public void Level1Button()
+    public void LoadCity()
     {
-        StartCoroutine(LoadLevel1Coroutine());
+        StartCoroutine(LoadCoroutine("city"));
     }
 
+    public void LoadBuilding()
+    {
+        StartCoroutine(LoadCoroutine("glassFloorBuilding"));
+    }
 
-    IEnumerator LoadLevel1Coroutine()
+    IEnumerator LoadCoroutine(string sceneName)
     {
         Debug.Log("loadSceneCoroutine");
         transitionAnimator.enabled = true;
         transitionAnimator.SetTrigger("end");
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("city");
+        SceneManager.LoadSceneAsync(sceneName);
     }
 
 }
