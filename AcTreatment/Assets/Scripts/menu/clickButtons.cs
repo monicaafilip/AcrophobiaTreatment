@@ -19,7 +19,7 @@ public class clickButtons : MonoBehaviour
     {
         transitionAnimator.enabled = true;
         transitionAnimator.SetTrigger("end");
-        yield return new WaitForSeconds(0.5f);
+        yield return null;
 
         cityButton.SetActive(true);
         buildingButton.SetActive(true);
@@ -36,21 +36,50 @@ public class clickButtons : MonoBehaviour
     
     public void LoadCity()
     {
-        StartCoroutine(LoadCoroutine("city"));
+        StartCoroutine(waitForProgram("city"));
     }
 
     public void LoadBuilding()
     {
-        StartCoroutine(LoadCoroutine("glassFloorBuilding"));
+        StartCoroutine(loadScene("glassFloorBuilding"));
     }
 
-    IEnumerator LoadCoroutine(string sceneName)
+    IEnumerator waitForProgram(string sceneName)
     {
-        Debug.Log("loadSceneCoroutine");
+        yield return null;
+        StartCoroutine(loadScene(sceneName));
+    }
+
+    IEnumerator LoadAsyncScene(string sceneName)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        asyncLoad.allowSceneActivation = false;
+        yield return (asyncLoad.progress > 0.9f);
         transitionAnimator.enabled = true;
         transitionAnimator.SetTrigger("end");
-        yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadSceneAsync(sceneName);
+        StartCoroutine(loaded(asyncLoad));
     }
+
+    IEnumerator loaded(AsyncOperation sync)
+    {
+        yield return null;
+        sync.allowSceneActivation = true;
+    }
+    IEnumerator loadScene(string sceneName)
+    {
+        AsyncOperation async = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+        async.allowSceneActivation = false;
+        while (async.progress < 0.9f)
+        {
+            //progressText.text = async.progress + "";
+            yield return null;
+        }
+       // while (!async.isDone)
+       // {
+       //     yield return null;
+       // }
+        async.allowSceneActivation = true;
+    }
+
 
 }
