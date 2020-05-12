@@ -36,48 +36,23 @@ public class clickButtons : MonoBehaviour
     
     public void LoadCity()
     {
-        StartCoroutine(waitForProgram("city"));
+        StartCoroutine(loadScene("city"));
     }
 
     public void LoadBuilding()
     {
         StartCoroutine(loadScene("glassFloorBuilding"));
     }
-
-    IEnumerator waitForProgram(string sceneName)
-    {
-        yield return null;
-        StartCoroutine(loadScene(sceneName));
-    }
-
-    IEnumerator LoadAsyncScene(string sceneName)
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-        asyncLoad.allowSceneActivation = false;
-        yield return (asyncLoad.progress > 0.9f);
-        transitionAnimator.enabled = true;
-        transitionAnimator.SetTrigger("end");
-        StartCoroutine(loaded(asyncLoad));
-    }
-
-    IEnumerator loaded(AsyncOperation sync)
-    {
-        yield return null;
-        sync.allowSceneActivation = true;
-    }
+   
     IEnumerator loadScene(string sceneName)
     {
-        AsyncOperation async = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+        AsyncOperation async = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         async.allowSceneActivation = false;
         while (async.progress < 0.9f)
         {
             //progressText.text = async.progress + "";
             yield return null;
         }
-       // while (!async.isDone)
-       // {
-       //     yield return null;
-       // }
         async.allowSceneActivation = true;
     }
 

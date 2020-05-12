@@ -141,9 +141,14 @@ public class PanelManagement : MonoBehaviour
 
     IEnumerator LoadSceneCoroutine()
     {
-        Debug.Log("loadSceneCoroutine");
-        yield return new WaitForSeconds(0.1f);
-        SceneManager.LoadSceneAsync(nextScene);
+        AsyncOperation async = SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
+        async.allowSceneActivation = false;
+        while (async.progress < 0.9f)
+        {
+            //progressText.text = async.progress + "";
+            yield return null;
+        }
+        async.allowSceneActivation = true;
     }
 
 
