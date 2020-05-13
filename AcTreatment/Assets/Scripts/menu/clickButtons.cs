@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using TMPro;
+
 public class clickButtons : MonoBehaviour
 {   
     public GameObject welcomeTextUI;
@@ -8,9 +10,30 @@ public class clickButtons : MonoBehaviour
     public GameObject exitButtonUI;
     public GameObject cityButton;
     public GameObject buildingButton;
+    public TextMeshProUGUI progressText;
 
     public Animator  transitionAnimator;
 
+    private AsyncOperation async;
+    private string loadedScene;
+
+    public void Start()
+    {
+        async = null;
+    }
+    public void Update()
+    {
+        if(async != null)
+        {
+            progressText.text = async.progress + "";
+            if (async.progress >= 0.85)
+            {
+                async.allowSceneActivation = true;
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName(loadedScene));
+            }
+        }
+        
+    }
     public void StartButton()
     {
         StartCoroutine(StartButtonCoroutine());
@@ -46,15 +69,11 @@ public class clickButtons : MonoBehaviour
    
     IEnumerator loadScene(string sceneName)
     {
-        AsyncOperation async = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        async = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         async.allowSceneActivation = false;
-        while (async.progress < 0.9f)
-        {
-            //progressText.text = async.progress + "";
-            yield return null;
-        }
-        async.allowSceneActivation = true;
+        loadedScene = sceneName;
+        yield return async;
+       
     }
-
 
 }
