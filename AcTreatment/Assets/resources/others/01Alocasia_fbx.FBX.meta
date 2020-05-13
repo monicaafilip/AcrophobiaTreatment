@@ -6,7 +6,295 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  - first:
+      74: 6023375893170553461
+    second: FocaciaPlant_LOD0|Dirt02|Take 001|BaseLayer
+  - first:
+      74: 2311270257048239207
+    second: FocaciaPlant_LOD0|Dirt|Take 001|BaseLayer
+  - first:
+      74: 4951660567056613987
+    second: FocaciaPlant_LOD0|Leaf.000|Take 001|BaseLayer
+  - first:
+      74: -6077348501037540888
+    second: FocaciaPlant_LOD0|Leaf.008|Take 001|BaseLayer
+  - first:
+      74: 5721683748490987364
+    second: FocaciaPlant_LOD0|Leaf.009|Take 001|BaseLayer
+  - first:
+      74: -3264492528811656049
+    second: FocaciaPlant_LOD0|Leaf.010|Take 001|BaseLayer
+  - first:
+      74: 8112981917949331563
+    second: FocaciaPlant_LOD0|Leaf.011|Take 001|BaseLayer
+  - first:
+      74: 8928735801712306844
+    second: FocaciaPlant_LOD0|Leaf006.000|Take 001|BaseLayer
+  - first:
+      74: 2270389042572266328
+    second: FocaciaPlant_LOD0|Leaf007|Take 001|BaseLayer
+  - first:
+      74: -7924897479154009121
+    second: FocaciaPlant_LOD0|leaf02.000|Take 001|BaseLayer
+  - first:
+      74: 3408482526690085429
+    second: FocaciaPlant_LOD0|leaf03.000|Take 001|BaseLayer
+  - first:
+      74: -4480633824087075578
+    second: FocaciaPlant_LOD0|leaf05.000|Take 001|BaseLayer
+  - first:
+      74: -8686345796341851907
+    second: FocaciaPlant_LOD0|lef04.000|Take 001|BaseLayer
+  - first:
+      74: 284195478111784100
+    second: FocaciaPlant_LOD0|Moh|Take 001|BaseLayer
+  - first:
+      74: 3592028933844058465
+    second: FocaciaPlant_LOD0|Pot|Take 001|BaseLayer
+  - first:
+      74: -5958092979637169737
+    second: FocaciaPlant_LOD0|Pot|Take 001|BaseLayer.001
+  - first:
+      74: 3237855404452984498
+    second: FocaciaPlant_LOD0|Pot|Take 001|BaseLayer.002
+  - first:
+      74: 2246863166648967288
+    second: FocaciaPlant_LOD0|Pot|Take 001|BaseLayer.003
+  - first:
+      74: -1987806805528500412
+    second: FocaciaPlant_LOD0|stem|Take 001|BaseLayer
+  - first:
+      74: -3503074856823834577
+    second: FocaciaPlant_LOD1|Dirt02|Take 001|BaseLayer
+  - first:
+      74: 8972633921169063630
+    second: FocaciaPlant_LOD1|Dirt|Take 001|BaseLayer
+  - first:
+      74: 976445105693239970
+    second: FocaciaPlant_LOD1|Leaf.000|Take 001|BaseLayer
+  - first:
+      74: -5984177955071337247
+    second: FocaciaPlant_LOD1|Leaf.008|Take 001|BaseLayer
+  - first:
+      74: 2717782998755901747
+    second: FocaciaPlant_LOD1|Leaf.009|Take 001|BaseLayer
+  - first:
+      74: -2114291912176640253
+    second: FocaciaPlant_LOD1|Leaf.010|Take 001|BaseLayer
+  - first:
+      74: -7130935944663312549
+    second: FocaciaPlant_LOD1|Leaf.011|Take 001|BaseLayer
+  - first:
+      74: -6854901613896309776
+    second: FocaciaPlant_LOD1|Leaf006.000|Take 001|BaseLayer
+  - first:
+      74: -5179971551967363208
+    second: FocaciaPlant_LOD1|Leaf007|Take 001|BaseLayer
+  - first:
+      74: -1204343410948231229
+    second: FocaciaPlant_LOD1|leaf02.000|Take 001|BaseLayer
+  - first:
+      74: -3209458385470225023
+    second: FocaciaPlant_LOD1|leaf03.000|Take 001|BaseLayer
+  - first:
+      74: 2818545278310309429
+    second: FocaciaPlant_LOD1|leaf05.000|Take 001|BaseLayer
+  - first:
+      74: -1494141916513250986
+    second: FocaciaPlant_LOD1|lef04.000|Take 001|BaseLayer
+  - first:
+      74: 5319812103110716422
+    second: FocaciaPlant_LOD1|Moh|Take 001|BaseLayer
+  - first:
+      74: 4827646629190548969
+    second: FocaciaPlant_LOD1|Pot|Take 001|BaseLayer
+  - first:
+      74: -5242475165652741213
+    second: FocaciaPlant_LOD1|Pot|Take 001|BaseLayer.001
+  - first:
+      74: 6433437942939629993
+    second: FocaciaPlant_LOD1|Pot|Take 001|BaseLayer.002
+  - first:
+      74: -5460565813964263905
+    second: FocaciaPlant_LOD1|Pot|Take 001|BaseLayer.003
+  - first:
+      74: 5982469832197213545
+    second: FocaciaPlant_LOD1|stem|Take 001|BaseLayer
+  - first:
+      74: -7359903045091085299
+    second: FocaciaPlant_LOD2|Dirt02|Take 001|BaseLayer
+  - first:
+      74: 1998031313369711020
+    second: FocaciaPlant_LOD2|Dirt|Take 001|BaseLayer
+  - first:
+      74: -975384025538212005
+    second: FocaciaPlant_LOD2|Leaf.000|Take 001|BaseLayer
+  - first:
+      74: -5304838642276859030
+    second: FocaciaPlant_LOD2|Leaf.008|Take 001|BaseLayer
+  - first:
+      74: -8130890644449465692
+    second: FocaciaPlant_LOD2|Leaf.009|Take 001|BaseLayer
+  - first:
+      74: -5038497630811419926
+    second: FocaciaPlant_LOD2|Leaf.010|Take 001|BaseLayer
+  - first:
+      74: -3459163545019804911
+    second: FocaciaPlant_LOD2|Leaf.011|Take 001|BaseLayer
+  - first:
+      74: 2979612250353590926
+    second: FocaciaPlant_LOD2|Leaf006.000|Take 001|BaseLayer
+  - first:
+      74: 9025506251184256850
+    second: FocaciaPlant_LOD2|Leaf007|Take 001|BaseLayer
+  - first:
+      74: 7229854344288505286
+    second: FocaciaPlant_LOD2|leaf02.000|Take 001|BaseLayer
+  - first:
+      74: 8041873377534393315
+    second: FocaciaPlant_LOD2|leaf03.000|Take 001|BaseLayer
+  - first:
+      74: 8503720564196726458
+    second: FocaciaPlant_LOD2|leaf05.000|Take 001|BaseLayer
+  - first:
+      74: -6129333011671404559
+    second: FocaciaPlant_LOD2|lef04.000|Take 001|BaseLayer
+  - first:
+      74: 2329249548221889120
+    second: FocaciaPlant_LOD2|Moh|Take 001|BaseLayer
+  - first:
+      74: 5751275271690186186
+    second: FocaciaPlant_LOD2|Pot|Take 001|BaseLayer
+  - first:
+      74: 4341052453828577884
+    second: FocaciaPlant_LOD2|Pot|Take 001|BaseLayer.001
+  - first:
+      74: -6075698111292268842
+    second: FocaciaPlant_LOD2|Pot|Take 001|BaseLayer.002
+  - first:
+      74: 2202031951901836171
+    second: FocaciaPlant_LOD2|Pot|Take 001|BaseLayer.003
+  - first:
+      74: -598755674332777057
+    second: FocaciaPlant_LOD2|stem|Take 001|BaseLayer
+  - first:
+      74: -6705971629561891738
+    second: FocaciaPlant_LOD3|Dirt02|Take 001|BaseLayer
+  - first:
+      74: 1345060167298024514
+    second: FocaciaPlant_LOD3|Dirt|Take 001|BaseLayer
+  - first:
+      74: 7284273828028225483
+    second: FocaciaPlant_LOD3|Leaf.000|Take 001|BaseLayer
+  - first:
+      74: -1012274235695182749
+    second: FocaciaPlant_LOD3|Leaf.008|Take 001|BaseLayer
+  - first:
+      74: 6422743226542295831
+    second: FocaciaPlant_LOD3|Leaf.009|Take 001|BaseLayer
+  - first:
+      74: -5024223567780306462
+    second: FocaciaPlant_LOD3|Leaf.010|Take 001|BaseLayer
+  - first:
+      74: -7018615758625616955
+    second: FocaciaPlant_LOD3|Leaf.011|Take 001|BaseLayer
+  - first:
+      74: 2682493472661414443
+    second: FocaciaPlant_LOD3|Leaf006.000|Take 001|BaseLayer
+  - first:
+      74: 788139263874739248
+    second: FocaciaPlant_LOD3|Leaf007|Take 001|BaseLayer
+  - first:
+      74: 1320054440784202462
+    second: FocaciaPlant_LOD3|leaf02.000|Take 001|BaseLayer
+  - first:
+      74: 7547375056087739296
+    second: FocaciaPlant_LOD3|leaf03.000|Take 001|BaseLayer
+  - first:
+      74: 6638806570140240701
+    second: FocaciaPlant_LOD3|leaf05.000|Take 001|BaseLayer
+  - first:
+      74: 4407235537783702645
+    second: FocaciaPlant_LOD3|lef04.000|Take 001|BaseLayer
+  - first:
+      74: -1081161374001026094
+    second: FocaciaPlant_LOD3|Moh|Take 001|BaseLayer
+  - first:
+      74: -2907568107473313978
+    second: FocaciaPlant_LOD3|Pot|Take 001|BaseLayer
+  - first:
+      74: -6084072762751434597
+    second: FocaciaPlant_LOD3|Pot|Take 001|BaseLayer.001
+  - first:
+      74: -1692449686751532897
+    second: FocaciaPlant_LOD3|Pot|Take 001|BaseLayer.002
+  - first:
+      74: 2327716414860744797
+    second: FocaciaPlant_LOD3|Pot|Take 001|BaseLayer.003
+  - first:
+      74: 7568469593660647756
+    second: FocaciaPlant_LOD3|stem|Take 001|BaseLayer
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gorshok
+    second: {fileID: 2100000, guid: 30538fedebc720c499a44ef9df6f0986, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gorshok.001
+    second: {fileID: 2100000, guid: 30538fedebc720c499a44ef9df6f0986, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leaf
+    second: {fileID: 2100000, guid: 1382b416c2ba8ca4183c9871c396e192, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leaf.001
+    second: {fileID: 2100000, guid: 1382b416c2ba8ca4183c9871c396e192, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leaf.002
+    second: {fileID: 2100000, guid: 1382b416c2ba8ca4183c9871c396e192, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leaf.003
+    second: {fileID: 2100000, guid: 1382b416c2ba8ca4183c9871c396e192, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moh
+    second: {fileID: 2100000, guid: 30538fedebc720c499a44ef9df6f0986, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moh.001
+    second: {fileID: 2100000, guid: 30538fedebc720c499a44ef9df6f0986, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sand
+    second: {fileID: 2100000, guid: 305825c914abe5345b379884a6337fc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sand.001
+    second: {fileID: 2100000, guid: 305825c914abe5345b379884a6337fc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stem
+    second: {fileID: 2100000, guid: 69610fbf3c1e2ca4ab0ee083548ba5b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stem.001
+    second: {fileID: 2100000, guid: 69610fbf3c1e2ca4ab0ee083548ba5b3, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -36,7 +324,11 @@ ModelImporter:
     clipAnimations: []
     isReadable: 0
   meshes:
-    lODScreenPercentages: []
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.0625
+    - 0.01
     globalScale: 10
     meshCompression: 0
     addColliders: 0
@@ -83,7 +375,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.010000001
+    globalScale: 10
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
