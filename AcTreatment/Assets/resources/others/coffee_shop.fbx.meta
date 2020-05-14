@@ -1,124 +1,84 @@
 fileFormatVersion: 2
-guid: 5b83502a59ce96142b91ebbac4b473ae
+guid: f8ed8a4b4adc13941a65e0c876e32272
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable:
-  - first:
-      74: 2388632328975808307
-    second: Rochet_Schnaider|Rochet_SchnaiderAction
-  - first:
-      74: 5041636426426406270
-    second: Rochet_Schnaider_LOD0|Rochet_Schnaider|Rochet_Schnaider|Rochet_SchnaiderAction|Ro
-  - first:
-      74: -6236666230904972760
-    second: Rochet_Schnaider_LOD0|Rochet_Schnaider|Rochet_Schnaider|Rochet_SchnaiderAction|Ro.001
-  - first:
-      74: 961664134758127038
-    second: Rochet_Schnaider_LOD0|Rochet_Schnaider|Rochet_Schnaider|Rochet_SchnaiderAction|Rochet
-  - first:
-      74: -971748382410527977
-    second: Rochet_Schnaider_LOD1|Rochet_Schnaider|Rochet_Schnaider|Rochet_SchnaiderAction|Ro
-  - first:
-      74: -1240586731208406602
-    second: Rochet_Schnaider_LOD1|Rochet_Schnaider|Rochet_Schnaider|Rochet_SchnaiderAction|Ro.001
-  - first:
-      74: -364648118317931776
-    second: Rochet_Schnaider_LOD1|Rochet_Schnaider|Rochet_Schnaider|Rochet_SchnaiderAction|Rochet
-  - first:
-      74: 3141630297890780605
-    second: Rochet_Schnaider_LOD2|Rochet_Schnaider|Rochet_Schnaider|Rochet_SchnaiderAction|Ro
-  - first:
-      74: 2445740084165961945
-    second: Rochet_Schnaider_LOD2|Rochet_Schnaider|Rochet_Schnaider|Rochet_SchnaiderAction|Ro.001
-  - first:
-      74: 2511819727387397916
-    second: Rochet_Schnaider_LOD2|Rochet_Schnaider|Rochet_Schnaider|Rochet_SchnaiderAction|Rochet
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Black_Painted_Metal
+      name: material_1
+    second: {fileID: 2100000, guid: 4db8bf8b4a56ae94dace28ac22bc3c97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_1_black
     second: {fileID: 2100000, guid: b038bff1ccc6d524da4d9e38f28360b0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Black_Painted_Wood
-    second: {fileID: 2100000, guid: b038bff1ccc6d524da4d9e38f28360b0, type: 2}
+      name: material_1_counter_top
+    second: {fileID: 2100000, guid: 80533fa37995c2e48a3139af75152b69, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Black_Wheel_Fender
-    second: {fileID: 2100000, guid: b038bff1ccc6d524da4d9e38f28360b0, type: 2}
+      name: material_1_display1
+    second: {fileID: 2100000, guid: 08202f3fcc64c294d9980300434fc46b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Glass_Machine
-    second: {fileID: 2100000, guid: 079c5e68656544002a8207ef2ec9e9cc, type: 2}
+      name: material_1_display2
+    second: {fileID: 2100000, guid: 2839d05ca0b6e06498eab117f561e551, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Glass_Reflector
-    second: {fileID: 2100000, guid: 079c5e68656544002a8207ef2ec9e9cc, type: 2}
+      name: material_1_display3
+    second: {fileID: 2100000, guid: 2839d05ca0b6e06498eab117f561e551, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Golden_Bolts
+      name: material_1_display4
+    second: {fileID: 2100000, guid: 0d05f9274417cb4478bf8f216b66f1fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_1_name
     second: {fileID: 2100000, guid: 881f3875c8685c944bdffc749d7da995, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Golden_Logo
+      name: material_1_sign
     second: {fileID: 2100000, guid: 881f3875c8685c944bdffc749d7da995, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Golden_Metal
+      name: material_1_silver
     second: {fileID: 2100000, guid: 881f3875c8685c944bdffc749d7da995, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Leather_Inside
-    second: {fileID: 2100000, guid: 146186b653c34c74d90bdbd54dbf2bac, type: 2}
+      name: material_1_sink
+    second: {fileID: 2100000, guid: 3ba6e025cd0ae95498fc8f68f5332e7a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Light_Bulb
-    second: {fileID: 2100000, guid: 796ea761562225642a16b1c312ecb350, type: 2}
+      name: material_1_structure
+    second: {fileID: 2100000, guid: 3ba6e025cd0ae95498fc8f68f5332e7a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Main_Color_Green
-    second: {fileID: 2100000, guid: 1382b416c2ba8ca4183c9871c396e192, type: 2}
+      name: material_1_trans_green
+    second: {fileID: 2100000, guid: 08202f3fcc64c294d9980300434fc46b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Reflector
-    second: {fileID: 2100000, guid: 796ea761562225642a16b1c312ecb350, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Web
-    second: {fileID: 2100000, guid: b038bff1ccc6d524da4d9e38f28360b0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wheel_Black_Metal
-    second: {fileID: 2100000, guid: b038bff1ccc6d524da4d9e38f28360b0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wheel_Green_Metal
-    second: {fileID: 2100000, guid: b038bff1ccc6d524da4d9e38f28360b0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wheel_Rubber
-    second: {fileID: 2100000, guid: b038bff1ccc6d524da4d9e38f28360b0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wood_Not_Painted
+      name: material_1_wood
     second: {fileID: 2100000, guid: 30538fedebc720c499a44ef9df6f0986, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_2
+    second: {fileID: 2100000, guid: 881f3875c8685c944bdffc749d7da995, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -152,7 +112,7 @@ ModelImporter:
     - 0.25
     - 0.125
     - 0.01
-    globalScale: 3
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -198,7 +158,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 3
+    globalScale: 0.1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
