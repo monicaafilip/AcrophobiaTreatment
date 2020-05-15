@@ -6,6 +6,33 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
+  - first:
+      74: 8253684046870442891
+    second: Suitcase_LP_LOD0|Suitcase_LP|Take 001|BaseLayer
+  - first:
+      74: 8465746678683471283
+    second: Suitcase_LP_LOD0|Suitcase_LP|Take 001|BaseLayer.001
+  - first:
+      74: -5560172693145407485
+    second: Suitcase_LP_LOD0|Suitcase_LP|Take 001|BaseLayer.002
+  - first:
+      74: 8473551906263940770
+    second: Suitcase_LP_LOD1|Suitcase_LP|Take 001|BaseLayer
+  - first:
+      74: -6671284393492338961
+    second: Suitcase_LP_LOD1|Suitcase_LP|Take 001|BaseLayer.001
+  - first:
+      74: -6493387098072724579
+    second: Suitcase_LP_LOD1|Suitcase_LP|Take 001|BaseLayer.002
+  - first:
+      74: -637586210208869986
+    second: Suitcase_LP_LOD2|Suitcase_LP|Take 001|BaseLayer
+  - first:
+      74: -3082763367543649454
+    second: Suitcase_LP_LOD2|Suitcase_LP|Take 001|BaseLayer.001
+  - first:
+      74: -1019100307935836906
+    second: Suitcase_LP_LOD2|Suitcase_LP|Take 001|BaseLayer.002
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -36,7 +63,10 @@ ModelImporter:
     clipAnimations: []
     isReadable: 0
   meshes:
-    lODScreenPercentages: []
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.01
     globalScale: 14
     meshCompression: 0
     addColliders: 0
@@ -83,7 +113,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.14
+    globalScale: 14
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
