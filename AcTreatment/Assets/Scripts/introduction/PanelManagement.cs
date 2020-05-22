@@ -125,6 +125,13 @@ public class PanelManagement : MonoBehaviour
     {
         nextScene = "menu";
     }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+            LoadScene();
+    }
+    
     public void LoadScene()
     {
         StartCoroutine(LoadSceneCoroutine());
