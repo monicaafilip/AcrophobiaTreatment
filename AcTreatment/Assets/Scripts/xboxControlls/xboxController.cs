@@ -1,23 +1,17 @@
 ﻿using UnityEngine;
 
-public class controllsMovement : MonoBehaviour
+public class xboxController : MonoBehaviour
 {
     InputController ctrl;
 
-    Vector2 move;
-    Vector2 rotate;
     private void Awake()
     {
         Debug.Log("awake");
         ctrl = new InputController();
-        ctrl.gameplay.Move.performed += x => move = x.ReadValue<Vector2>();
-        ctrl.gameplay.Move.canceled += x => move = Vector2.zero;
     }
 
     void Update()
     {
-        Vector3 m = new Vector3(move.x, 0, move.y) * Time.deltaTime;
-        transform.Translate(m, Space.World);
     }
 
     private void OnEnable()
