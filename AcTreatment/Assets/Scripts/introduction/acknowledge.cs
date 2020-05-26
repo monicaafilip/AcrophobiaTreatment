@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class acknowledge : MonoBehaviour
+public class Acknowledge : MonoBehaviour
 {
     public GameObject userManual;
     public GameObject initialPanel;
