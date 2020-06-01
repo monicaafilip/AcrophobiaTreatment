@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AdvicesScroll : MonoBehaviour
+public class InformationsClick : MonoBehaviour
 {
     //all info
     public GameObject breathing_info;
@@ -24,7 +24,12 @@ public class AdvicesScroll : MonoBehaviour
        
     }
 
-    IEnumerator ShowAdvices()
+    public void ShowAdvices()
+    {
+        StartCoroutine(ShowAdvicesCoroutine());
+    }
+
+    IEnumerator ShowAdvicesCoroutine()
     {
         Reset();
 
@@ -46,14 +51,14 @@ public class AdvicesScroll : MonoBehaviour
         text1.SetActive(true);
     }
 
-    private void ShowBreathingExercises()
+    public void ShowBreathingExercises()
     {
         Reset();
         breathing_info.SetActive(true);
         breathingExercises_audio.Play();
     }
 
-    private void ShowOtherInformations()
+    public void ShowOtherInformations()
     {
         Reset();
         other_info.SetActive(true);

@@ -4,13 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class PanelManagement : MonoBehaviour
 {
-    public GameObject nextButton;
-
     public GameObject panelInitial;
+
     public GameObject panelDefinire;
+    public GameObject fobiaDef;
+    public GameObject acrofobiaDef;
+
     public GameObject panelStudii;
     public GameObject panelIntrebari;
-    public GameObject studii_leftCanvas;
 
     public GameObject intrebare1;
     public GameObject intrebare2;
@@ -25,136 +26,145 @@ public class PanelManagement : MonoBehaviour
     public GameObject ex3;
     public GameObject ex_concluzie;
 
-    public string currentPanel;
+    public static string currentPanel;
+
+    public void Start()
+    {
+        Debug.Log("[PanelManagement] Start()");
+
+        XBoxController.xbox.inputCtrl.gameplay.A.performed += x => Next();
+        nextScene = "menu";
+    }
+
 
     public void Next()
     {
+        Debug.Log("[PanelManagement] Next() currentPanel = " + currentPanel);
         switch (currentPanel)
         {
             case "Definire":
-                xboxController.previousActiveMenus.Add(panelDefinire);
-                xboxController.currentActivePanel = panelStudii;
+            case "Fobia_general":
+                XBoxController.xbox.previousActiveMenus.Add(fobiaDef);
+                XBoxController.xbox.currentActivePanel = acrofobiaDef;
 
+                fobiaDef.SetActive(false);
+                acrofobiaDef.SetActive(true);
+                currentPanel = "Acrofobia";
+                break;
+
+            case "Acrofobia":
+                XBoxController.xbox.previousActiveMenus.Add(acrofobiaDef);
+                XBoxController.xbox.currentActivePanel = panelStudii;
+
+                // set the initial state of this panel
+                acrofobiaDef.SetActive(false);
+                fobiaDef.SetActive(true);
                 panelDefinire.SetActive(false);
+
                 panelStudii.SetActive(true);
-                studii_leftCanvas.SetActive(true);
                 currentPanel = "Studii";
-                nextButton.SetActive(false);
-                nextButton.SetActive(true);
                 break;
 
             case "Studii":
-                xboxController.previousActiveMenus.Add(panelStudii);
-                xboxController.currentActivePanel = panelIntrebari;
+                XBoxController.xbox.previousActiveMenus.Add(panelStudii);
+                XBoxController.xbox.currentActivePanel = panelIntrebari;
 
                 panelStudii.SetActive(false);
-                studii_leftCanvas.SetActive(false);
                 panelIntrebari.SetActive(true);
                 currentPanel = "Intrebare_1";
-                nextButton.SetActive(false);
-                nextButton.SetActive(true);
                 break;
 
             case "Intrebare_1":
-                xboxController.previousActiveMenus.Add(intrebare1);
-                xboxController.currentActivePanel = intrebare2;
+                XBoxController.xbox.previousActiveMenus.Add(intrebare1);
+                XBoxController.xbox.currentActivePanel = intrebare2;
 
                 intrebare1.SetActive(false);
                 intrebare2.SetActive(true);
                 currentPanel = "Intrebare_2";
-                nextButton.SetActive(false);
-                nextButton.SetActive(true);
                 break;
 
             case "Intrebare_2":
-                xboxController.previousActiveMenus.Add(intrebare2);
-                xboxController.currentActivePanel = intrebare3;
+                XBoxController.xbox.previousActiveMenus.Add(intrebare2);
+                XBoxController.xbox.currentActivePanel = intrebare3;
 
                 intrebare2.SetActive(false);
                 intrebare3.SetActive(true);
                 currentPanel = "Intrebare_3";
-                nextButton.SetActive(false);
-                nextButton.SetActive(true);
                 break;
 
             case "Intrebare_3":
-                xboxController.previousActiveMenus.Add(intrebare3);
-                xboxController.currentActivePanel = intrebare4;
+                XBoxController.xbox.previousActiveMenus.Add(intrebare3);
+                XBoxController.xbox.currentActivePanel = intrebare4;
 
                 intrebare3.SetActive(false);
                 intrebare4.SetActive(true);
                 currentPanel = "Intrebare_4";
-                nextButton.SetActive(false);
-                nextButton.SetActive(true);
                 break;
 
             case "Intrebare_4":
-                xboxController.previousActiveMenus.Add(intrebare4);
-                xboxController.currentActivePanel = intrebare5;
+                XBoxController.xbox.previousActiveMenus.Add(intrebare4);
+                XBoxController.xbox.currentActivePanel = intrebare5;
 
                 intrebare4.SetActive(false);
                 intrebare5.SetActive(true);
                 currentPanel = "Intrebare_5";
-                nextButton.SetActive(false);
-                nextButton.SetActive(true);
                 break;
 
             case "Intrebare_5":
-                xboxController.previousActiveMenus.Add(intrebare5);
-                xboxController.currentActivePanel = intr_concluzie;
+                XBoxController.xbox.previousActiveMenus.Add(intrebare5);
+                XBoxController.xbox.currentActivePanel = intr_concluzie;
 
                 intrebare5.SetActive(false);
                 intr_concluzie.SetActive(true);
                 currentPanel = "Intrebare_concluzie";
-                nextButton.SetActive(false);
-                nextButton.SetActive(true);
                 break;
 
             case "Intrebare_concluzie":
-                xboxController.previousActiveMenus.Add(panelIntrebari);
-                xboxController.currentActivePanel = panelImaginatie;
+                XBoxController.xbox.previousActiveMenus.Add(intr_concluzie);
+                XBoxController.xbox.currentActivePanel = panelImaginatie;
 
+                // set the initial state of this panel
                 panelIntrebari.SetActive(false);
+                intr_concluzie.SetActive(false);
+                intrebare1.SetActive(true);
+
                 panelImaginatie.SetActive(true);
                 currentPanel = "Ex1";
-                nextButton.SetActive(false);
-                nextButton.SetActive(true);
                 break;
 
             case "Ex1":
-                xboxController.previousActiveMenus.Add(ex1);
-                xboxController.currentActivePanel = ex2;
+                XBoxController.xbox.previousActiveMenus.Add(ex1);
+                XBoxController.xbox.currentActivePanel = ex2;
 
                 ex1.SetActive(false);
                 ex2.SetActive(true);
                 currentPanel = "Ex2";
-                nextButton.SetActive(false);
-                nextButton.SetActive(true);
                 break;
 
             case "Ex2":
-                xboxController.previousActiveMenus.Add(ex2);
-                xboxController.currentActivePanel = ex3;
+                XBoxController.xbox.previousActiveMenus.Add(ex2);
+                XBoxController.xbox.currentActivePanel = ex3;
                 
                 ex2.SetActive(false);
                 ex3.SetActive(true);
                 currentPanel = "Ex3";
-                nextButton.SetActive(false);
-                nextButton.SetActive(true);
                 break;
 
             case "Ex3":
-                xboxController.previousActiveMenus.Add(ex3);
-                xboxController.currentActivePanel = ex_concluzie;
+                XBoxController.xbox.previousActiveMenus.Add(ex3);
+                XBoxController.xbox.currentActivePanel = ex_concluzie;
 
                 ex3.SetActive(false);
                 ex_concluzie.SetActive(true);
                 currentPanel = "Ex_concluzie";
-                nextButton.SetActive(false);
-                nextButton.SetActive(true);
                 break;
 
             case "Ex_concluzie":
+                // set the initial state of this panel
+                panelImaginatie.SetActive(false);
+                ex_concluzie.SetActive(false);
+                ex1.SetActive(true);
+
                 LoadScene();
                 break;
 
@@ -164,11 +174,6 @@ public class PanelManagement : MonoBehaviour
     }
     // for initial buttons
     public string nextScene;
-
-    private void Awake()
-    {
-        nextScene = "menu";
-    }
 
     public void Update()
     {
@@ -183,10 +188,12 @@ public class PanelManagement : MonoBehaviour
 
     public void Curiozitati()
     {
+        Debug.Log("[PanelManagement] Curiozitati()");
         panelInitial.SetActive(false);
         panelDefinire.SetActive(true);
-        nextButton.SetActive(true);
         currentPanel = "Definire";
+        XBoxController.xbox.currentActivePanel = panelDefinire;
+        XBoxController.xbox.previousActiveMenus.Add(panelInitial);
     }
 
 
@@ -201,8 +208,4 @@ public class PanelManagement : MonoBehaviour
         }
         async.allowSceneActivation = true;
     }
-
-
-
-
 }
