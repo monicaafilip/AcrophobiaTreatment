@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class XBoxController : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class XBoxController : MonoBehaviour
     public List<GameObject> previousActiveMenus;
 
     public InputController inputCtrl;
-
     public static XBoxController xbox;
+
+    public GameObject cybersickness;
 
     private bool first;
 
@@ -34,6 +36,8 @@ public class XBoxController : MonoBehaviour
 
     public void ShowInformations()
     {
+        CloseCybersicknessAudio();
+
         currentActivePanel = FindCurrentActiveObject(canvas.gameObject);
 
         if (currentActivePanel == null)
@@ -48,6 +52,24 @@ public class XBoxController : MonoBehaviour
     public void GoBack()
     {
         Debug.Log("[XBoxController] GoBack()");
+        CloseCybersicknessAudio();
+
+        if (SceneManager.GetActiveScene().name == "menu")
+        {
+            GameObject canvas = FindObjectOfType<Canvas>().gameObject;
+            GameObject info = canvas.transform.Find("informations").gameObject;
+            if ( info.activeSelf == true )
+            {
+                info.SetActive(false);
+                canvas.transform.Find("CityBackground").gameObject.SetActive(true);
+                canvas.transform.Find("BlackImage").gameObject.SetActive(true);
+                canvas.transform.Find("city").gameObject.SetActive(true);
+                canvas.transform.Find("building").gameObject.SetActive(true);
+            }
+            return;
+
+        }
+
         if (previousActiveMenus.Count == 0)
             return;
 
@@ -61,6 +83,7 @@ public class XBoxController : MonoBehaviour
     {
         Debug.Log("[XBoxController] Next()");
 
+        CloseCybersicknessAudio();
         // when the information panel is active, 
         // Next() function will return
         GameObject currActive = FindCurrentActiveObject(canvas.gameObject);
@@ -136,6 +159,12 @@ public class XBoxController : MonoBehaviour
             parent.SetActive(false);
         }
         
+    }
+
+    private void CloseCybersicknessAudio()
+    {
+        if(cybersickness.activeSelf == true)
+            cybersickness.SetActive(false);
     }
 
     private void OnEnable()

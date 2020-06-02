@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class InformationsClick : MonoBehaviour
 {
@@ -25,11 +25,20 @@ public class InformationsClick : MonoBehaviour
     public GameObject text3;
     public GameObject text4;
 
+
     public void Start()
     {
         breathingButton.animator.keepAnimatorControllerStateOnDisable = true;
         advicesButton.animator.keepAnimatorControllerStateOnDisable = true;
         otherInfoButton.animator.keepAnimatorControllerStateOnDisable = true;
+        
+        if(SceneManager.GetActiveScene().name == "menu")
+        {
+            // remove the background images, else where the informations will not be seen
+            GameObject canvas = FindObjectOfType<Canvas>().gameObject;
+            canvas.transform.Find("CityBackground").gameObject.SetActive(false);
+            canvas.transform.Find("BlackImage").gameObject.SetActive(false);
+        }
     }
 
      public void OnDisable()
