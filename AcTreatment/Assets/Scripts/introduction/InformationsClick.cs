@@ -1,9 +1,15 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class InformationsClick : MonoBehaviour
 {
+    // buttons
+    public Button breathingButton;
+    public Button advicesButton;
+    public Button otherInfoButton;
+
     //all info
     public GameObject breathing_info;
     public GameObject advices_info;
@@ -21,8 +27,25 @@ public class InformationsClick : MonoBehaviour
 
     public void Start()
     {
-       
+        breathingButton.animator.keepAnimatorControllerStateOnDisable = true;
+        advicesButton.animator.keepAnimatorControllerStateOnDisable = true;
+        otherInfoButton.animator.keepAnimatorControllerStateOnDisable = true;
     }
+
+     public void OnDisable()
+     {
+        Debug.Log("[InformationsClick] OnDisable()");
+
+        // reset info opened 
+        breathing_info.SetActive(false);
+        advices_info.SetActive(false);
+        other_info.SetActive(false);
+
+        // set normal state to every button
+        breathingButton.animator.Play("Normal");
+        advicesButton.animator.Play("Normal");
+        otherInfoButton.animator.Play("Normal");
+     }
 
     public void ShowAdvices()
     {
@@ -33,10 +56,13 @@ public class InformationsClick : MonoBehaviour
     {
         Reset();
 
-        yield return new WaitForSeconds(10);
+        advices_info.SetActive(true);
+        text1.SetActive(true);
+
+        yield return new WaitForSeconds(5);
         text1.SetActive(false);
         text2.SetActive(true);
-
+ 
         yield return new WaitForSeconds(8);
         text2.SetActive(false);
         text3.SetActive(true);

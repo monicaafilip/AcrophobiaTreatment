@@ -60,6 +60,13 @@ public class XBoxController : MonoBehaviour
     private void Next()
     {
         Debug.Log("[XBoxController] Next()");
+
+        // when the information panel is active, 
+        // Next() function will return
+        GameObject currActive = FindCurrentActiveObject(canvas.gameObject);
+        if (currActive.name == "informations")
+            return;
+
         if (first)
         {
             currentActivePanel =  FindCurrentActiveObject(canvas.gameObject);
@@ -76,7 +83,7 @@ public class XBoxController : MonoBehaviour
 
     // find the first child active of the gameobject given as parameter
     // return the found child or null if there is no active child
-    private GameObject FindCurrentActiveObject(GameObject parent)
+    public GameObject FindCurrentActiveObject(GameObject parent)
     {
         GameObject childActive;
         for (int i = 0; i < parent.transform.childCount; i++)

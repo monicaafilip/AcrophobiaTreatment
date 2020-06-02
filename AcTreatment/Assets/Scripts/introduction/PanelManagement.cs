@@ -40,6 +40,13 @@ public class PanelManagement : MonoBehaviour
     public void Next()
     {
         Debug.Log("[PanelManagement] Next() currentPanel = " + currentPanel);
+
+        // when the information panel is active, 
+        // Next() function will return
+        GameObject currActive = XBoxController.xbox.FindCurrentActiveObject(XBoxController.xbox.canvas.gameObject);
+        if (currActive.name == "informations")
+            return;
+
         switch (currentPanel)
         {
             case "Definire":
