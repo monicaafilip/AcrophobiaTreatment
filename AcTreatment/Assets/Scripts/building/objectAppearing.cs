@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class objectAppearing : MonoBehaviour
+public class ObjectAppearing : MonoBehaviour
 {
     public GameObject groundFloor;
     public GameObject firstFloor;

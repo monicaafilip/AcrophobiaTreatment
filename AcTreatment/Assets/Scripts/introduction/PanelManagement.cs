@@ -206,11 +206,11 @@ public class PanelManagement : MonoBehaviour
 
     IEnumerator LoadSceneCoroutine()
     {
-        AsyncOperation async = SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
+        AsyncOperation async = SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Single);
         async.allowSceneActivation = false;
         while (async.progress < 0.9f)
         {
-            //progressText.text = async.progress + "";
+            Debug.Log("[ClickButtons] LoadScene(" + nextScene + ") : async.progress= " + async.progress.ToString());
             yield return null;
         }
         async.allowSceneActivation = true;

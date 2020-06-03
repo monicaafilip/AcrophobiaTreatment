@@ -32,13 +32,6 @@ public class InformationsClick : MonoBehaviour
         advicesButton.animator.keepAnimatorControllerStateOnDisable = true;
         otherInfoButton.animator.keepAnimatorControllerStateOnDisable = true;
         
-        if(SceneManager.GetActiveScene().name == "menu")
-        {
-            // remove the background images, else where the informations will not be seen
-            GameObject canvas = FindObjectOfType<Canvas>().gameObject;
-            canvas.transform.Find("CityBackground").gameObject.SetActive(false);
-            canvas.transform.Find("BlackImage").gameObject.SetActive(false);
-        }
     }
 
      public void OnDisable()

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [ExecuteInEditMode]
-public class basicMovement : MonoBehaviour
+public class BasicMovement : MonoBehaviour
 {
     public float speed = 2f;
     public Rigidbody rigidBody;

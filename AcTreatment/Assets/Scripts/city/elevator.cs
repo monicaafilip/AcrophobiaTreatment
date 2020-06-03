@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class elevator : MonoBehaviour
+public class Elevator : MonoBehaviour
 {
     public Vector3 floorDist;
     public float speed = 1.0f;

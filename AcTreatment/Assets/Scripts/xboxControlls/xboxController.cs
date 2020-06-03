@@ -15,8 +15,11 @@ public class XBoxController : MonoBehaviour
     public static XBoxController xbox;
 
     public GameObject cybersickness;
-
     private bool first;
+
+    //second scene (glassFloorBuilding) needed
+    private GameObject player;
+    public GameObject canvasGO;
 
     public void Awake()
     {
@@ -32,11 +35,35 @@ public class XBoxController : MonoBehaviour
         inputCtrl.gameplay.B.performed += x => GoBack();
         inputCtrl.gameplay.A.performed += x => Next();
 
+        //second scene (glassFloorBuilding) needed
+        player = GameObject.Find("OVRPlayerController");
+
     }
 
+    public void Update()
+    {
+        //second scene (glassFloorBuilding) needed
+        player = GameObject.Find("OVRPlayerController");
+    }
     public void ShowInformations()
     {
-        CloseCybersicknessAudio();
+        if (SceneManager.GetActiveScene().name == "menu")
+        {
+            // remove the background images, else where the informations will not be seen
+            canvas.transform.Find("CityBackground").gameObject.SetActive(false);
+            canvas.transform.Find("BlackImage").gameObject.SetActive(false);
+        }
+
+        if (SceneManager.GetActiveScene().name == "introduction")
+        {
+            CloseCybersicknessAudio();
+        }
+
+        if (SceneManager.GetActiveScene().name == "glassFloorBuilding")
+        {
+            ChangeCanvasPosition();
+            canvas.transform.Find("informations").gameObject.SetActive(true);
+        }
 
         currentActivePanel = FindCurrentActiveObject(canvas.gameObject);
 
@@ -47,31 +74,37 @@ public class XBoxController : MonoBehaviour
         previousActiveMenus.Add(currentActivePanel);
         currentActivePanel = informations;
         informations.SetActive(true);
+        
     }
 
     public void GoBack()
     {
         Debug.Log("[XBoxController] GoBack()");
-        CloseCybersicknessAudio();
 
-        if (SceneManager.GetActiveScene().name == "menu")
+        // GoBack() in city scene && glassFloorBuilding scenes means just removing informations gameObject
+        if(SceneManager.GetActiveScene().name == "city" || SceneManager.GetActiveScene().name == "glassFloorBuilding")
         {
-            GameObject canvas = FindObjectOfType<Canvas>().gameObject;
-            GameObject info = canvas.transform.Find("informations").gameObject;
-            if ( info.activeSelf == true )
-            {
-                info.SetActive(false);
-                canvas.transform.Find("CityBackground").gameObject.SetActive(true);
-                canvas.transform.Find("BlackImage").gameObject.SetActive(true);
-                canvas.transform.Find("city").gameObject.SetActive(true);
-                canvas.transform.Find("building").gameObject.SetActive(true);
-            }
+            informations.SetActive(false);
             return;
-
         }
 
         if (previousActiveMenus.Count == 0)
             return;
+
+        if (SceneManager.GetActiveScene().name == "introduction")
+            CloseCybersicknessAudio();
+
+        if (SceneManager.GetActiveScene().name == "menu")
+        {
+            GameObject canvas = FindObjectOfType<Canvas>().gameObject;
+            
+            if ( informations.activeSelf == true )
+            {
+                informations.SetActive(false);
+                canvas.transform.Find("CityBackground").gameObject.SetActive(true);
+                canvas.transform.Find("BlackImage").gameObject.SetActive(true);
+            }
+        }
 
         currentActivePanel.SetActive(false);
         CheckIfParentShouldBeInactive();
@@ -90,7 +123,7 @@ public class XBoxController : MonoBehaviour
         if (currActive.name == "informations")
             return;
 
-        if (first)
+        if (first && SceneManager.GetActiveScene().name == "introduction" )
         {
             currentActivePanel =  FindCurrentActiveObject(canvas.gameObject);
 
@@ -161,9 +194,49 @@ public class XBoxController : MonoBehaviour
         
     }
 
+    // calculate the canvas position for the glassFloorBuilding scene
+    // the canvas will be set in front of the player with a predefined distance
+    private void ChangeCanvasPosition()
+    {
+        float distance      = 32f;
+        // GameObject canvasGO = GameObject.Find("canvasGameObject").gameObject;
+
+        float eulerAnglesY = player.transform.eulerAngles.y;
+
+        if (eulerAnglesY > 270 && eulerAnglesY < 360)
+        {
+            // front direction is on +z
+            canvasGO.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + distance);
+            canvasGO.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 0, player.transform.eulerAngles.z);
+
+        }
+        if (eulerAnglesY < 270 && eulerAnglesY > 180)
+        {
+            // left direction is on -x
+            canvasGO.transform.position = new Vector3(player.transform.position.x - distance, player.transform.position.y, player.transform.position.z);
+            canvasGO.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 270, player.transform.eulerAngles.z);
+
+        }
+        if (eulerAnglesY > 0 && eulerAnglesY < 90)
+        {
+            // right direction is on +x
+            canvasGO.transform.position = new Vector3(player.transform.position.x + distance, player.transform.position.y, player.transform.position.z);
+            canvasGO.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 90, player.transform.eulerAngles.z);
+
+        }
+        if (eulerAnglesY < 180 && eulerAnglesY > 90)
+        {
+            // back direction is on -z
+            canvasGO.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z - distance);
+            canvasGO.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, 180, player.transform.eulerAngles.z);
+
+        }
+
+    }
+
     private void CloseCybersicknessAudio()
     {
-        if(cybersickness.activeSelf == true)
+        if(cybersickness != null && cybersickness.activeSelf == true)
             cybersickness.SetActive(false);
     }
 
