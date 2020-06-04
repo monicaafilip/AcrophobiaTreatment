@@ -34,6 +34,7 @@ public class XBoxController : MonoBehaviour
         inputCtrl.gameplay.Y.performed += x => ShowInformations();
         inputCtrl.gameplay.B.performed += x => GoBack();
         inputCtrl.gameplay.A.performed += x => Next();
+        inputCtrl.gameplay.X.performed += x => CloseCurrentScene();
 
         //second scene (glassFloorBuilding) needed
         player = GameObject.Find("OVRPlayerController");
@@ -59,10 +60,34 @@ public class XBoxController : MonoBehaviour
             CloseCybersicknessAudio();
         }
 
+        if (SceneManager.GetActiveScene().name == "city")
+        {
+            // close exit panels, if they're actives
+            GameObject closePanel_l = canvas.transform.Find("closePanel_left").gameObject;
+            GameObject closePanel_r = canvas.transform.Find("closePanel_right").gameObject;
+            if (closePanel_l != null)
+                closePanel_l.SetActive(false);
+            if (closePanel_r != null)
+                closePanel_r.SetActive(false);
+
+            float eulerAnglesY = player.transform.eulerAngles.y;
+            if (eulerAnglesY > -90 && eulerAnglesY < 90)
+            {
+                canvas.transform.Find("informations_left").gameObject.SetActive(true);
+            }
+            if (eulerAnglesY > 90 && eulerAnglesY < 270)
+            {
+                canvas.transform.Find("informations_right").gameObject.SetActive(true);
+            }
+            return;
+
+        }
+
         if (SceneManager.GetActiveScene().name == "glassFloorBuilding")
         {
             ChangeCanvasPosition();
             canvas.transform.Find("informations").gameObject.SetActive(true);
+            return;
         }
 
         currentActivePanel = FindCurrentActiveObject(canvas.gameObject);
@@ -84,7 +109,23 @@ public class XBoxController : MonoBehaviour
         // GoBack() in city scene && glassFloorBuilding scenes means just removing informations gameObject
         if(SceneManager.GetActiveScene().name == "city" || SceneManager.GetActiveScene().name == "glassFloorBuilding")
         {
-            informations.SetActive(false);
+            if (SceneManager.GetActiveScene().name == "city")
+            {
+                GameObject closePanel_left = canvas.transform.Find("closePanel_left").gameObject;
+                GameObject closePanel_right = canvas.transform.Find("closePanel_right").gameObject;
+                if (closePanel_left != null || closePanel_right != null)
+                {
+                    closePanel_left.SetActive(false);
+                    closePanel_right.SetActive(false);
+                }
+                canvas.transform.Find("informations_left").gameObject.SetActive(false);
+                canvas.transform.Find("informations_right").gameObject.SetActive(false);
+            }
+            else
+            {
+                canvas.transform.Find("ClosePanel").gameObject.SetActive(false);
+                informations.SetActive(false);
+            }
             return;
         }
 
@@ -134,6 +175,70 @@ public class XBoxController : MonoBehaviour
             initialPanel.SetActive(true);
             currentActivePanel = initialPanel;
             first = false;
+        }
+    }
+
+    // close the current active scene 
+    // load menu scene
+    // ask the user if he really wants to close the current scene
+    public void CloseCurrentScene()
+    {
+        Debug.Log("[XBoxController] CloseCurrentScene()");
+
+        if (SceneManager.GetActiveScene().name == "city")
+        {
+            // close informations panel first, if it is active
+            GameObject informations_l = canvas.transform.Find("informations_left").gameObject;
+            GameObject informations_r = canvas.transform.Find("informations_right").gameObject;
+            if (informations_l != null)
+                informations_l.SetActive(false);
+            if (informations_r != null)
+                informations_r.SetActive(false);
+
+            float eulerAnglesY = player.transform.eulerAngles.y;
+            if (eulerAnglesY > -90 && eulerAnglesY < 90)
+            {
+                canvas.transform.Find("closePanel_left").gameObject.SetActive(true);
+            }
+            if (eulerAnglesY > 90 && eulerAnglesY < 270)
+            {
+                canvas.transform.Find("closePanel_right").gameObject.SetActive(true);
+            }
+        }
+
+        if (SceneManager.GetActiveScene().name == "glassFloorBuilding")
+        {
+            ChangeCanvasPosition();
+            informations.SetActive(false);
+            canvas.transform.Find("ClosePanel").gameObject.SetActive(true);
+        }
+
+        if (SceneManager.GetActiveScene().name == "menu")
+        {
+            canvas.transform.Find("firstPanel").gameObject.SetActive(false);
+            canvas.transform.Find("secondPanel").gameObject.SetActive(false);
+            canvas.transform.Find("closePanel").gameObject.SetActive(true);
+        }
+    }
+
+    // load menu scene, if the user choose so
+    public void LoadMenu()
+    {
+        SceneManager.LoadSceneAsync("menu", LoadSceneMode.Single);
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+    }
+
+    // hide close informations if the user wants to continue in this scene
+    public void HideCloseInformations()
+    {
+        if (SceneManager.GetActiveScene().name == "city")
+        {
+            canvas.transform.Find("closePanel_left").gameObject.SetActive(false);
+            canvas.transform.Find("closePanel_right").gameObject.SetActive(false);
+        }
+        if (SceneManager.GetActiveScene().name == "glassFloorBuilding")
+        {
+            canvas.transform.Find("ClosePanel").gameObject.SetActive(false);
         }
     }
 

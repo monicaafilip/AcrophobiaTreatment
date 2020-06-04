@@ -7,7 +7,7 @@ public class ChooseScene : MonoBehaviour
 {
     public GameObject firstPanel;
     public GameObject secondPanel;
-    public TextMeshProUGUI progressText;
+    public GameObject closePanel;
 
     public Animator  transitionAnimator;
 
@@ -57,7 +57,7 @@ public class ChooseScene : MonoBehaviour
 
     IEnumerator LoadScene(string sceneName)
     {
-        AsyncOperation async = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        AsyncOperation async = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         async.allowSceneActivation = false;
         while (async.progress < 0.9f)
         {
@@ -65,6 +65,12 @@ public class ChooseScene : MonoBehaviour
             yield return null;
         }
         async.allowSceneActivation = true;
+    }
+
+    public void HideClosePanel()
+    {
+        closePanel.SetActive(false);
+        secondPanel.SetActive(true);
     }
 
 }
