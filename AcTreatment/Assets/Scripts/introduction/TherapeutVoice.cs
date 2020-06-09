@@ -15,7 +15,7 @@ public class TherapeutVoice : MonoBehaviour
     IEnumerator takeCareOfCyberSickness()
     {
         Debug.Log("[TherapeutVoice] cybersickness audio source play");
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
         cybersickness.Play();
     }
 }
