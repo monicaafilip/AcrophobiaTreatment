@@ -3,7 +3,17 @@ guid: 909d87499951cd74f834daa8481450a1
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 3DPaz_fir-tree_leaves
+    second: {fileID: 2100000, guid: 1382b416c2ba8ca4183c9871c396e192, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 3DPaz_fir-tree_trunk
+    second: {fileID: 2100000, guid: 1382b416c2ba8ca4183c9871c396e192, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
