@@ -115,7 +115,7 @@ public class Elevator : MonoBehaviour
     }
 
 
-    // activates or deactivates all buttons, depending on the given parameter
+    // activates or deactivates all bttons, depending on the given parameter
     private void InteractiveButtons(bool activate)
     {
         Button but = elevatorPanel.transform.Find("ChooseFloorButton").gameObject.GetComponent<Button>();

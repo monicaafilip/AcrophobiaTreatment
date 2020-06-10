@@ -6,6 +6,8 @@ public class XBoxController : MonoBehaviour
 {
     public Canvas canvas;
     public GameObject informations;
+
+    public GameObject takeTheTest;
     public GameObject initialPanel;
 
     public GameObject currentActivePanel;
@@ -15,7 +17,8 @@ public class XBoxController : MonoBehaviour
     public static XBoxController xbox;
 
     public GameObject cybersickness;
-    private bool first;
+    private bool first;   // to activate takeTheScene panel
+    private bool second;  // to activate initial panel
 
     //second scene (glassFloorBuilding) needed
     private GameObject player;
@@ -27,6 +30,7 @@ public class XBoxController : MonoBehaviour
 
         xbox = this;
         first = true;
+        second = false;
 
         if (inputCtrl == null)
             inputCtrl = new InputController();
@@ -164,7 +168,20 @@ public class XBoxController : MonoBehaviour
         if (currActive.name == "informations")
             return;
 
-        if (first && SceneManager.GetActiveScene().name == "introduction" )
+        if (first && SceneManager.GetActiveScene().name == "introduction")
+        {
+            currentActivePanel = FindCurrentActiveObject(canvas.gameObject);
+
+            if (currentActivePanel == null)
+                return;
+
+            currentActivePanel.SetActive(false);
+            takeTheTest.SetActive(true);
+            currentActivePanel = takeTheTest;
+            first = false;
+            second = true;
+        }
+        else if (second && SceneManager.GetActiveScene().name == "introduction" )
         {
             currentActivePanel =  FindCurrentActiveObject(canvas.gameObject);
 
@@ -174,7 +191,7 @@ public class XBoxController : MonoBehaviour
             currentActivePanel.SetActive(false);
             initialPanel.SetActive(true);
             currentActivePanel = initialPanel;
-            first = false;
+            second = false;
         }
     }
 
