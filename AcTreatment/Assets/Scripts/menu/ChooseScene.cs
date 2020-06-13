@@ -9,6 +9,9 @@ public class ChooseScene : MonoBehaviour
     public GameObject secondPanel;
     public GameObject closePanel;
 
+    public GameObject cityAudio;
+    public GameObject buildingAudio;
+
     public Animator  transitionAnimator;
 
     private AsyncOperation async;
@@ -47,16 +50,28 @@ public class ChooseScene : MonoBehaviour
 
     public void LoadCity()
     {
+        cityAudio.GetComponent<AudioSource>().Play();
         StartCoroutine(LoadScene("city"));
     }
 
     public void LoadBuilding()
     {
+        buildingAudio.GetComponent<AudioSource>().Play();
         StartCoroutine(LoadScene("glassFloorBuilding"));
     }
 
     IEnumerator LoadScene(string sceneName)
     {
+        // first wait the audio to finish
+        if (sceneName ==  "city")
+        {
+            yield return new WaitForSeconds(cityAudio.GetComponent<AudioSource>().clip.length);
+        }
+        if (sceneName == "glassFloorBuilding")
+        {
+            yield return new WaitForSeconds(buildingAudio.GetComponent<AudioSource>().clip.length);
+        }
+
         AsyncOperation async = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         async.allowSceneActivation = false;
         while (async.progress < 0.9f)

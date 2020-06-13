@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class InformationsClick : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class InformationsClick : MonoBehaviour
     public GameObject other_info;
 
     //sounds
+    public AudioSource beforeBreathing_audio;
     public AudioSource breathingExercises_audio;
 
     //advices
@@ -25,16 +27,27 @@ public class InformationsClick : MonoBehaviour
     public GameObject text3;
     public GameObject text4;
 
+    private bool breathing_ex;
+
+    DateTime awarenessStartedTime;
+    float awarenessLength;
 
     public void Start()
     {
         breathingButton.animator.keepAnimatorControllerStateOnDisable = true;
         advicesButton.animator.keepAnimatorControllerStateOnDisable = true;
         otherInfoButton.animator.keepAnimatorControllerStateOnDisable = true;
-        
+
+        breathing_ex = false;
     }
 
-     public void OnDisable()
+    private void Update()
+    {
+        if (breathing_ex && (DateTime.Now - awarenessStartedTime).Seconds ==  (int)awarenessLength)
+            breathingExercises_audio.Play();
+    }
+
+    public void OnDisable()
      {
         Debug.Log("[InformationsClick] OnDisable()");
 
@@ -82,8 +95,11 @@ public class InformationsClick : MonoBehaviour
     public void ShowBreathingExercises()
     {
         Reset();
+        breathing_ex = true;
+        awarenessStartedTime = DateTime.Now;
+        awarenessLength = beforeBreathing_audio.clip.length;
         breathing_info.SetActive(true);
-        breathingExercises_audio.Play();
+        beforeBreathing_audio.Play();
     }
 
     public void ShowOtherInformations()
@@ -97,5 +113,14 @@ public class InformationsClick : MonoBehaviour
         breathing_info.SetActive(false);
         advices_info.SetActive(false);
         other_info.SetActive(false);
+
+        breathingExercises_audio.Stop();
+        beforeBreathing_audio.Stop();
+
+        breathing_ex = false;
+
+        TherapeutVoice.cybersickness.gameObject.SetActive(false);
     }
+
+   
 }

@@ -190,6 +190,7 @@ public class PanelManagement : MonoBehaviour
     
     public void LoadScene()
     {
+        GetComponent<AudioSource>().Play();
         StartCoroutine(LoadSceneCoroutine());
     }
 
@@ -206,6 +207,9 @@ public class PanelManagement : MonoBehaviour
 
     IEnumerator LoadSceneCoroutine()
     {
+        // first wait the audio to finish
+        yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+
         AsyncOperation async = SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Single);
         async.allowSceneActivation = false;
         while (async.progress < 0.9f)

@@ -1,14 +1,14 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TherapeutVoice : MonoBehaviour
 {
-    public AudioSource cybersickness;
+    public static AudioSource cybersickness;
     
     void Start()
     {
         Debug.Log("[TherapeutVoice] Start()");
+        cybersickness = GetComponent<AudioSource>();
         StartCoroutine(takeCareOfCyberSickness());
     }
     
