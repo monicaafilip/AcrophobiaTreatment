@@ -1,8 +1,8 @@
 # AcrophobiaTreatment
-Aceasta aplicatie simuleaza tratarea acrofobiei ( fricii de inaltime ) prin tratamentul de expunere realizat cu ajutorul realitatii virtuale.
+Această aplicație simulează tratarea acrofobiei ( fricii de înălțime ) prin tratamentul de expunere realizat cu ajutorul realității virtuale.
 - Modelele 3D au fost preluate fie din magazinul prestabilit Unity https://assetstore.unity.com/, fie de pe https://www.cgtrader.com/, sau https://www.turbosquid.com/3d-model/.
-- Structura orasului a fost realizata cu ajutorul Blender, importand o parte din structura orasului New-York cu ajutorul OpenStreetMaps si a add-on-ului din Blender.
-- In cazul texturilor din expozitia de picturi, din interiorului cladirii obiectului Level2, acestea au fost preluate de pe pinterest, allartclassic.com sau alte site-uri.
+- Structura orașului a fost realizată cu ajutorul frameowrk-ului Blender, importând o parte din structura orașului New-York cu ajutorul OpenStreetMaps și a add-on-ului din Blender.
+- În cazul texturilor din expoziția de picturi, din interiorului clădirii, acestea au fost preluate de pe pinterest, allartclassic.com sau alte site-uri.
 
 Scurt preview :
 	
@@ -51,3 +51,16 @@ PROIECTARE:
     
     
    După cum am menționat anterior, referitor la exercițiile de respirație este indicat a se folosi aparate de măsurare a frecvenței respiratorii sau a frecvenței cardiace, pentru a se evita anumite repercursiuni ce se pot întâmpla, mai ales în contextul actual, când utilizatorul nu este supravegheat de un specialist terapeut.
+
+
+VALIDITATEA APLICATIEI:
+
+Pentru a atesta validitatea aplicației, am primit câteva sfaturi foarte importantede la doamna Nadia Gorduza, medic psihoterapeut, certificat în Terapie prin Expunerela Realitatea Virtuală, fondator ID Therapy Bespoke Treatment Center. Aceste sfaturi sunt mai degrabă pașii în realizarea unei aplicații valide. Aceste sfaturi au fost deja luate în considerare, dar mai pot fi adăugate îmbunătățiri. Ca și pași necesari în realizarea unei aplicații selfhelp, ce nu necesită asistența unui terapeut specialist, pot fi evidențiați următorii:
+
+1. Este importantă evaluarea gradului fobiei. De obicei acesta se poate afla în urma unui test special, care este protejat de drepturile de autor, dar poate fi accesat online oricând. Rezultatul se primește atât imediat pe pagina site-ului pe care se realizează, cât și în e-mail dacă acesta este cerut.Ca aplicare a acestui fapt, am adăugat în lucrarea scrisă cât și în aplicație acest sfat de a se trece mai întâi prin testul exemplificat mai sus.
+
+2. Este bine a se adăuga spații intermediare și de acomodare atât cu realitatea virtuală, cât și cu conceptele de bază referitoare la fobii. Ca aplicare, există spațiile introductive prezentate anterior, care respectă aceste cerințe.
+
+3. Exercițiile de respirație diafragmatică sunt recomandate a fi făcute în prezența unui specialist. Dacă acest lucru nu se poate realiza, este indicată folosirea aparaturilor speciale pentru a măsura ritmul respirator și cardiac, pentru a se putea depista o respirație executată incorect.  Aceasta poate fi existentă în stare de anxietate și poate determina tahicardie sau hiperventilație, ce în loc să ajute, poate agrava starea de rău. În acest scop, s-au adăugat sfaturile și informațiile necesare pentru a preveni orice consecință nedorită. Totuși, responsabilitatea cade în mâna utilizatorului.
+
+4. Spațiile concrete de expunere ar trebui să realizeze această expunere gradual, având minim 5 expuneri graduale. Acest aspect nu a fost pus în practică, dar poate fi considerată o bună îmbunătățire, pentru a transforma această simulare de tratament într-un tratament real.
