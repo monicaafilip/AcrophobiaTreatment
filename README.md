@@ -20,14 +20,25 @@ PROIECTARE:
    După această primă parte există un alt spațiu în care persoana poate decide dacă mai dorește să continue. În caz afirmativ își va alege spațiul cu care va începe.
     Acest spațiu este realizat în interiorul unei clădiri simple, în care meniul poate fi vizualizat pe un monitor de pe perete. Această clădire a fost aleasă în principal pentru a conștientiza indiviul că va începe tratamentul, dar totodată acesta să rămână într-o stare de relaxare și calm, necesară acestui tratament.
     ![alt text](https://github.com/monicaolanescu/AcrophobiaTreatment/blob/master/scene_captures/menu_1.png)
+    ![alt text](https://github.com/monicaolanescu/AcrophobiaTreatment/blob/master/scene_captures/menu_2.png)
     
    În partea a doua, ce este reprezentată de spațiile în care se realizează tratamentul sunt construite două spații de bază, ce au ca scop expunerea la înălțime în spații sigure, ce vor conferi siguranță. Acest lucru va ajuta utilizatorul să depășească această fobie.
     
    O scenă este reprezentată de un oraș, harta fiind preluată ca parte din harta New-York-ului.
    Individul va începe simularea prin folosirea unui lift de 54 de etaje, ce dă posibilitatea de a vedea tot orașul de sus. Liftul este realizat din sticlă, fapt ce face ca utilizatorul să se simtă cât mai expus la înălțimea la care se află. Pentru a putea alege etajul la care se dorește a se ajunge, este creat un panou de comandă, în care se află butoane pentru fiecare etaj în parte. Utilizatorul va alege etajul la care va merge, în tot acest timp de urcare/coborâre fiind informat și de etajul curent.
+    ![alt text](https://github.com/monicaolanescu/AcrophobiaTreatment/blob/master/scene_captures/city_1.png)
+    ![alt text](https://github.com/monicaolanescu/AcrophobiaTreatment/blob/master/scene_captures/city_2.png)
+    ![alt text](https://github.com/monicaolanescu/AcrophobiaTreatment/blob/master/scene_captures/city_3.png)
+    ![alt text](https://github.com/monicaolanescu/AcrophobiaTreatment/blob/master/scene_captures/city_4.png)
+    ![alt text](https://github.com/monicaolanescu/AcrophobiaTreatment/blob/master/scene_captures/city_5.png)
     
    Cealaltă scenă este o clădire, în care persoana se află la etajul 3. În mijlocul etajului podeaua este de sticlă, fapt ce lasă posibiliatea utilizatorului de a privi celelalte etaje, precum si activitățile care se desfășoară acolo.
    Această clădire are diferite obiecte de expoziție, dar și mobilă pentru un design interior, precum și o sală de mese aflată la etajul 1. Persoana poate vizualiza toate aceste detalii. De asemenea acoperișul acestei clădiri este tot din sticlă ce lasă posibilitatea individului de a admira un cer frumos.
+    ![alt text](https://github.com/monicaolanescu/AcrophobiaTreatment/blob/master/scene_captures/building_1.png)
+    ![alt text](https://github.com/monicaolanescu/AcrophobiaTreatment/blob/master/scene_captures/building_2.png)
+    ![alt text](https://github.com/monicaolanescu/AcrophobiaTreatment/blob/master/scene_captures/building_3.png)
+    ![alt text](https://github.com/monicaolanescu/AcrophobiaTreatment/blob/master/scene_captures/building_4.png)
+    ![alt text](https://github.com/monicaolanescu/AcrophobiaTreatment/blob/master/scene_captures/building_5.png)
      
    În toate aceste simulări individul va fi ghidat de vocea terapeutului virtual, cu informații extra sau diferite atenționări, de asemenea informațiile referitoare la utilizare, exerciții de respirație sau anumite sfaturi pot fi accesate și vizionate oricând acesta dorește.
     
