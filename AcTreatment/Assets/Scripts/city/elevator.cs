@@ -27,7 +27,7 @@ public class Elevator : MonoBehaviour
         Debug.Log("[Elevator] Awake()");
 
         floorDist            = new Vector3(0, 2.1f, 0);
-        maxFloor             = 54;
+        maxFloor             = 50;
         colorSetToFinalFloor = false;
         firstFloor           = true;
 
@@ -143,6 +143,17 @@ public class Elevator : MonoBehaviour
     // UPDATE FUNCTION
     private void Update()
     {
+        Debug.Log("[Elevator] Update() : xboxctrl.stopElevator = " + XBoxController.stopElevator);
+        if (XBoxController.stopElevator)
+        {
+            InteractiveButtons(true);
+            ButtonSetColor(m_floorToGo, Color.white);
+            ButtonSetColor(currentFloor, Color.white);
+            m_floorToGo = currentFloor;
+            XBoxController.stopElevator = false;
+            return;
+        }
+
         if (floorChanged)
         {
             if (m_floorToGo != currentFloor)

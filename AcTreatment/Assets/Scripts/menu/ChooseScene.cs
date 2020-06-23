@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using TMPro;
 
 public class ChooseScene : MonoBehaviour
 {
@@ -14,6 +13,8 @@ public class ChooseScene : MonoBehaviour
 
     public Animator  transitionAnimator;
 
+    public GameObject player;
+
     private AsyncOperation async;
     private string loadedScene;
     private bool sceneDoneLoading;
@@ -23,6 +24,8 @@ public class ChooseScene : MonoBehaviour
         async = null;
         sceneDoneLoading = false;
         XBoxController.xbox.currentActivePanel = firstPanel;
+
+        player.transform.position = new Vector3(-0.36f, 1.52f, 9.128f); // not working yet
     }
 
     public void StartButton()

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class XBoxController : MonoBehaviour
 {
@@ -20,9 +21,12 @@ public class XBoxController : MonoBehaviour
     private bool first;   // to activate takeTheScene panel
     private bool second;  // to activate initial panel
 
-    //second scene (glassFloorBuilding) needed
+    // second scene (glassFloorBuilding) needed
     private GameObject player;
     public GameObject canvasGO;
+
+    // city scene needed
+    public static bool stopElevator = false;
 
     public void Awake()
     {
@@ -204,6 +208,9 @@ public class XBoxController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "city")
         {
+            // firstly, stop the elevator
+            stopElevator = true;
+
             // close informations panel first, if it is active
             GameObject informations_l = canvas.transform.Find("informations_left").gameObject;
             GameObject informations_r = canvas.transform.Find("informations_right").gameObject;
@@ -241,8 +248,7 @@ public class XBoxController : MonoBehaviour
     // load menu scene, if the user choose so
     public void LoadMenu()
     {
-        SceneManager.LoadSceneAsync("menu", LoadSceneMode.Single);
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+        StartCoroutine(LoadScene("menu"));
     }
 
     // hide close informations if the user wants to continue in this scene
@@ -250,6 +256,7 @@ public class XBoxController : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "city")
         {
+            stopElevator = false;
             canvas.transform.Find("closePanel_left").gameObject.SetActive(false);
             canvas.transform.Find("closePanel_right").gameObject.SetActive(false);
         }
@@ -360,6 +367,27 @@ public class XBoxController : MonoBehaviour
     {
         if(cybersickness != null && cybersickness.activeSelf == true)
             cybersickness.SetActive(false);
+    }
+
+
+    IEnumerator LoadScene(string sceneName)
+    {
+        AudioSource toMenu = canvas.transform.Find("toMenu_audio").GetComponent<AudioSource>();
+        toMenu.Play();
+
+        if (SceneManager.GetActiveScene().name == "city" || SceneManager.GetActiveScene().name == "glassFloorBuilding")
+        {
+            yield return new WaitForSeconds(toMenu.clip.length);
+        }
+
+        AsyncOperation async = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+        async.allowSceneActivation = false;
+        while (async.progress < 0.9f)
+        {
+            Debug.Log("[ClickButtons] LoadScene(" + sceneName + ") : async.progress= " + async.progress.ToString());
+            yield return null;
+        }
+        async.allowSceneActivation = true;
     }
 
     private void OnEnable()

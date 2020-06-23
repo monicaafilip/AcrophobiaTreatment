@@ -119,7 +119,8 @@ public class InformationsClick : MonoBehaviour
 
         breathing_ex = false;
 
-        TherapeutVoice.cybersickness.gameObject.SetActive(false);
+        if(SceneManager.GetActiveScene().name == "introduction")
+            TherapeutVoice.cybersickness.gameObject.SetActive(false);
     }
 
    

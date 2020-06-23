@@ -172,6 +172,8 @@ public class PanelManagement : MonoBehaviour
                 ex_concluzie.SetActive(false);
                 ex1.SetActive(true);
 
+                XBoxController.xbox.canvas.transform.Find("UserManual").gameObject.SetActive(true);
+                
                 LoadScene();
                 break;
 

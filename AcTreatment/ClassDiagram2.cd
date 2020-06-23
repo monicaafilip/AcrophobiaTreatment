@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Spațiul introductiv&#xD;&#xA;">
+    <Position X="1.829" Y="5.492" Height="0.568" Width="1.556" />
+  </Comment>
+  <Comment CommentText="Spațiul de alegere a locului în care se efectuează simularea">
+    <Position X="5.725" Y="6.671" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="sceneSequence" Collapsed="true">
+    <Position X="11" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAsAAAAAACAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\city\SceneSequence.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Elevator" Collapsed="true">
+    <Position X="10.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAgAAABAAAACCABAAJASgAAAABgAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\city\Elevator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObjectAppearing" Collapsed="true">
+    <Position X="10.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACABAAAAAgAAAAAAAAAAAAAAAAAAgAABAAA=</HashCode>
+      <FileName>Assets\Scripts\building\ObjectAppearing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InformationsClick">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAgACABBgIAAAAAAAAgABUAAAAMABJAAAAABIE=</HashCode>
+      <FileName>Assets\Scripts\introduction\InformationsClick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Initial">
+    <Position X="2.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAACAAAABAQICAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\introduction\Initial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PanelManagement">
+    <Position X="5.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAwCcAAIgAQgAACEAAABAQACAAAAIFEAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\introduction\PanelManagement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TherapeutVoice">
+    <Position X="2.75" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAACAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\introduction\TherapeutVoice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChooseScene">
+    <Position X="7.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gIAAQQAoQCAAAAAAAAACCIAAACAAAAAIBgIEAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\menu\ChooseScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuitApplication">
+    <Position X="7.25" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\menu\QuitApplication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="@InputController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgADBAACAAAhAAABAACJQEAAAgAGQEEAAgAAASAAA=</HashCode>
+      <FileName>Assets\Scripts\xboxControlls\InputController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="XBoxController" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQIAAAAABAAAgQAAoEAAEBDAAACIAEtAICAAAAAKEI=</HashCode>
+      <FileName>Assets\Scripts\xboxControlls\XBoxController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

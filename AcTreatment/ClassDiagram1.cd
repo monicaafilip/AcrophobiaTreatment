@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Spațiul din clădirea cu podea de sticlă&#xD;&#xA;">
+    <Position X="0.5" Y="3.696" Height="1.289" Width="1.554" />
+  </Comment>
+  <Comment CommentText="Spațiul din orașul în care se află liftul de 54 etaje">
+    <Position X="4.848" Y="6.649" Height="1.012" Width="1.875" />
+  </Comment>
+  <Comment CommentText="Spațiul introductiv&#xD;&#xA;">
+    <Position X="9.487" Y="7.417" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Spațiul de alegere a locului în care se efectuează simularea&#xD;&#xA;">
+    <Position X="17.487" Y="8.269" Height="1.027" Width="2.137" />
+  </Comment>
+  <Comment CommentText="gestionarea inputurilor xbox controllerului&#xD;&#xA;">
+    <Position X="25.603" Y="9.513" Height="0.983" Width="1.773" />
+  </Comment>
+  <Class Name="ObjectAppearing">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACABAAAAAgAAAAAAAAAAAAAAAAAAgAABAAA=</HashCode>
+      <FileName>Assets\Scripts\building\ObjectAppearing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Elevator">
+    <Position X="3" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAgAAABAAAACCABAAJASgAAAABgAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\city\Elevator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sceneSequence">
+    <Position X="5.75" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAsAAAAAACAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\city\SceneSequence.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InformationsClick">
+    <Position X="8" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAgACABBgIAAAAAAAAAABUAAAAMABJAAAAABIE=</HashCode>
+      <FileName>Assets\Scripts\introduction\InformationsClick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Initial">
+    <Position X="11.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAACAAAABAQICAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\introduction\Initial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PanelManagement">
+    <Position X="15.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAwCcAAIgAQgAACEAAABAQACAAAAIFEAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\introduction\PanelManagement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TherapeutVoice">
+    <Position X="11.5" Y="4.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAACAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\introduction\TherapeutVoice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChooseScene">
+    <Position X="18.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAQQAoQCAAAAAAAAACCIAAACAAAAAIBgIAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\menu\ChooseScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuitApplication">
+    <Position X="18.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\menu\QuitApplication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="@InputController">
+    <Position X="22" Y="0.75" Width="4" />
+    <NestedTypes>
+      <Struct Name="@InputController.GameplayActions" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\xboxControlls\InputController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Interface Name="@InputController.IGameplayActions" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\xboxControlls\InputController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Interface>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAgADBAACAAAhAAABAACJQEAAAgAGQEEAAgAAASAAA=</HashCode>
+      <FileName>Assets\Scripts\xboxControlls\InputController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XBoxController">
+    <Position X="26.25" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AgQIAAAAABAAAgAAAIEAAEBDAAACIAEtAICAAAAAKEI=</HashCode>
+      <FileName>Assets\Scripts\xboxControlls\XBoxController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="14" />
+</ClassDiagram>
