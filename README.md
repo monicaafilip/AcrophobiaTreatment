@@ -1,4 +1,6 @@
 # AcrophobiaTreatment
+Lucrarea de Licență - Simularea tratării acrofobiei cu ajutorul realității virtuale
+
 Această aplicație simulează tratarea acrofobiei ( fricii de înălțime ) prin tratamentul de expunere realizat cu ajutorul realității virtuale.
 - Modelele 3D au fost preluate fie din magazinul prestabilit Unity https://assetstore.unity.com/, fie de pe https://www.cgtrader.com/, sau https://www.turbosquid.com/3d-model/.
 - Structura orașului a fost realizată cu ajutorul frameowrk-ului Blender, importând o parte din structura orașului New-York cu ajutorul OpenStreetMaps și a add-on-ului din Blender.
