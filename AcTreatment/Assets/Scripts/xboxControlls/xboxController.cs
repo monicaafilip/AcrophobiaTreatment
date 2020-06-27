@@ -27,6 +27,8 @@ public class XBoxController : MonoBehaviour
 
     // city scene needed
     public static bool stopElevator = false;
+    public static bool informationShown = false;
+
 
     public void Awake()
     {
@@ -70,6 +72,10 @@ public class XBoxController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "city")
         {
+            // stop elevator first
+            stopElevator = true;
+            informationShown = true;
+
             // close exit panels, if they're actives
             GameObject closePanel_l = canvas.transform.Find("closePanel_left").gameObject;
             GameObject closePanel_r = canvas.transform.Find("closePanel_right").gameObject;
@@ -79,13 +85,13 @@ public class XBoxController : MonoBehaviour
                 closePanel_r.SetActive(false);
 
             float eulerAnglesY = player.transform.eulerAngles.y;
-            if (eulerAnglesY > -90 && eulerAnglesY < 90)
-            {
-                canvas.transform.Find("informations_left").gameObject.SetActive(true);
-            }
-            if (eulerAnglesY > 90 && eulerAnglesY < 270)
+            if (eulerAnglesY >= 90 && eulerAnglesY <= 270)
             {
                 canvas.transform.Find("informations_right").gameObject.SetActive(true);
+            }
+            else
+            {
+                canvas.transform.Find("informations_left").gameObject.SetActive(true);
             }
             return;
 
@@ -128,11 +134,18 @@ public class XBoxController : MonoBehaviour
                 }
                 canvas.transform.Find("informations_left").gameObject.SetActive(false);
                 canvas.transform.Find("informations_right").gameObject.SetActive(false);
+
+                ResetInformations(canvas.transform.Find("informations_left").gameObject);
+                ResetInformations(canvas.transform.Find("informations_right").gameObject);
+
+                stopElevator = false;
+                informationShown = false;
             }
             else
             {
                 canvas.transform.Find("ClosePanel").gameObject.SetActive(false);
                 informations.SetActive(false);
+                ResetInformations(informations.gameObject);
             }
             return;
         }
@@ -219,12 +232,15 @@ public class XBoxController : MonoBehaviour
             if (informations_r != null)
                 informations_r.SetActive(false);
 
+            ResetInformations(informations_r);
+            ResetInformations(informations_l);
+
             float eulerAnglesY = player.transform.eulerAngles.y;
-            if (eulerAnglesY > -90 && eulerAnglesY < 90)
+            if (eulerAnglesY >= -90 && eulerAnglesY <= 90)
             {
                 canvas.transform.Find("closePanel_left").gameObject.SetActive(true);
             }
-            if (eulerAnglesY > 90 && eulerAnglesY < 270)
+            if (eulerAnglesY >= 90 && eulerAnglesY <= 270)
             {
                 canvas.transform.Find("closePanel_right").gameObject.SetActive(true);
             }
@@ -388,6 +404,16 @@ public class XBoxController : MonoBehaviour
             yield return null;
         }
         async.allowSceneActivation = true;
+    }
+
+    //reset informations to default state
+    private void ResetInformations(GameObject info)
+    {
+        GameObject adv = (info.transform.Find("Panel").gameObject).transform.Find("Advices").gameObject;
+        adv.transform.Find("Text1").gameObject.SetActive(true);
+        adv.transform.Find("Text2").gameObject.SetActive(false);
+        adv.transform.Find("Text3").gameObject.SetActive(false);
+        adv.transform.Find("Text4").gameObject.SetActive(false);
     }
 
     private void OnEnable()

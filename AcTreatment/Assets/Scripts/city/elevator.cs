@@ -154,6 +154,9 @@ public class Elevator : MonoBehaviour
             return;
         }
 
+        if (XBoxController.informationShown)
+            return;
+
         if (floorChanged)
         {
             if (m_floorToGo != currentFloor)
